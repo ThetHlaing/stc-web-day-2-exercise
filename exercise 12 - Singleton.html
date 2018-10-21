@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>PADC Myanmar - Singleton Design Pattern</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div id='sample-div'></div>
+  <script>
+    var singleton = (function () {
+
+      var instance;
+
+      function init() {
+
+        var name;
+
+        this.setName = function (name) {
+          this.name = name;
+        }
+
+        this.getName = function () {
+          return this.name;
+        }
+
+        return {
+          setName: setName,
+          getName: getName
+        }
+
+      }
+
+      function getInstance() {
+
+        if (!instance) {
+          instance = init();
+        }
+
+        return instance;
+      }
+
+      return {
+        getInstance: getInstance
+      }
+
+    })();
+
+
+    var one = singleton.getInstance();
+    var two = singleton.getInstance();
+
+    console.log(one == two)
+
+    one.setName('PADC');
+    console.log(two.getName()); 
+
+  </script>
+</body>
+
+</html>

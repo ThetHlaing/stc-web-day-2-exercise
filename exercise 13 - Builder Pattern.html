@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>PADC Myanmar - Builder Pattern</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+  <script>
+    const my_div = $('<div id="myDiv">This is a div.</div>');
+    // myDiv now represents a jQuery object referencing a DOM node.
+
+    const my_text = $('<p/>');
+    // myText now represents a jQuery object referencing an HTMLParagraphElement.
+
+    const my_input = $('<input />');
+    // myInput now represents a jQuery object referencing a HTMLInputElement
+
+    const my_div_from_plain_js = document.createElement('div');
+    my_div_from_plain_js.id = 'myDiv';
+    my_div_from_plain_js.innerText = 'This is a div.';
+
+  </script>
+</body>
+
+</html>

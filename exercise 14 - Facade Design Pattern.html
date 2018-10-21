@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>PADC Myanmar - Facade Design Pattern</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div id='sample-div'></div>  
+  <script>
+    const HTMLChanger = (function () {
+      const contents = 'Content Update here'
+
+      const changeHTML = function () {
+        var element = document.querySelector('#sample-div');
+        element.innerHTML = contents;
+      }
+
+      return {
+        facade: function () {
+          changeHTML();
+          console.log(contents);
+        }
+      };
+
+    })();
+
+    HTMLChanger.facade();      
+    console.log(HTMLChanger.changeHTML);     
+
+
+  </script>
+</body>
+
+</html>
